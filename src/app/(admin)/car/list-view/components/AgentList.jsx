@@ -288,6 +288,7 @@ const parseNested = (obj) => {
             <th>Brand</th>
             <th>Fuel Type</th>
             <th>Category</th>
+            <th>Image</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -297,7 +298,8 @@ const parseNested = (obj) => {
               <td>{car.name}</td>
               <td>{car.brand?.name || car.brandName}</td>
               <td>{car.fuelType}</td>
-              <td>{car.category} {console.log(car)}</td>
+              <td>{car.category} </td>
+              <td><img src={car.image} alt={car.name} width={100} height={100} /></td>
               <td>
                 <Button variant="info" size="sm" onClick={()=>openView(car)}>View</Button>{" "}
                 <Button variant="warning" size="sm" onClick={()=>openEdit(car)}>Edit</Button>{" "}
@@ -476,7 +478,7 @@ const parseNested = (obj) => {
     <p><strong>Fuel Type:</strong> {viewCar.fuelType}</p>
     <p><strong>Category:</strong> {viewCar.category}</p>
     <p><strong>Description:</strong> {viewCar.description}</p>
-    {viewCar.image && <img src={`http://localhost:5000${viewCar.image}`} alt={viewCar.name} className="img-fluid mb-3"/>}
+    {viewCar.image && <img src={`${viewCar.image}`} alt={viewCar.name} className="img-fluid mb-3"/>}
 
 <Row className="mb-3">
   <Col md={3}><strong>Upcoming:</strong> {viewCar.isUpcoming ? "Yes" : "No"}</Col>
