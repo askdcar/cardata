@@ -64,7 +64,7 @@ const parseNested = (obj) => {
   // Fetch cars
   const fetchCars = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/cars");
+      const { data } = await axios.get("https://api.amongcart.com/api/cars");
       setCars(Array.isArray(data) ? data : data.cars || []);
     } catch (err) {
       console.error(err);
@@ -74,7 +74,7 @@ const parseNested = (obj) => {
   // Fetch brands
   const fetchBrands = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/brands");
+      const { data } = await axios.get("https://api.amongcart.com/api/brands");
       setBrands(Array.isArray(data) ? data : data.brands || []);
     } catch (err) {
       console.error(err);
@@ -186,9 +186,9 @@ const parseNested = (obj) => {
       });
 
       if (isEdit && selectedCar) {
-        await axios.put(`http://localhost:5000/api/cars/${selectedCar._id}`, data, { headers: { "Content-Type": "multipart/form-data" }});
+        await axios.put(`https://api.amongcart.com/api/cars/${selectedCar._id}`, data, { headers: { "Content-Type": "multipart/form-data" }});
       } else {
-        await axios.post("http://localhost:5000/api/cars", data, { headers: { "Content-Type": "multipart/form-data" }});
+        await axios.post("https://api.amongcart.com/api/cars", data, { headers: { "Content-Type": "multipart/form-data" }});
       }
 
       setShowModal(false);
@@ -202,7 +202,7 @@ const parseNested = (obj) => {
   // Delete car
   const handleDelete = async id => {
     if (!confirm("Are you sure to delete this car?")) return;
-    try { await axios.delete(`http://localhost:5000/api/cars/${id}`); fetchCars(); }
+    try { await axios.delete(`https://api.amongcart.com/api/cars/${id}`); fetchCars(); }
     catch(err){ console.error(err); }
   };
 

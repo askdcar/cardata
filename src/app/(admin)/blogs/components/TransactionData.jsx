@@ -34,7 +34,7 @@ const SnowEditor = ({ value, onChange }) => {
         fd.append("image", file);
 
         try {
-          const res = await axios.post("http://localhost:5000/api/upload", fd, {
+          const res = await axios.post("https://api.amongcart.com/api/upload", fd, {
             headers: { "Content-Type": "multipart/form-data" },
           });
           const url = res.data.url;
@@ -145,7 +145,7 @@ export default function BlogManagement() {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/blogs");
+      const res = await axios.get("https://api.amongcart.com/api/blogs");
       setBlogs(Array.isArray(res.data) ? res.data : res.data.blogs || []);
     } catch (err) {
       console.error(err);
@@ -207,9 +207,9 @@ export default function BlogManagement() {
       if (formData.image) data.append("image", formData.image);
 
       if (modalType === "add") {
-        await axios.post("http://localhost:5000/api/blogs", data, { headers: { "Content-Type": "multipart/form-data" } });
+        await axios.post("https://api.amongcart.com/api/blogs", data, { headers: { "Content-Type": "multipart/form-data" } });
       } else if (modalType === "edit" && selectedBlog) {
-        await axios.put(`http://localhost:5000/api/blogs/${selectedBlog._id}`, data, { headers: { "Content-Type": "multipart/form-data" } });
+        await axios.put(`https://api.amongcart.com/api/blogs/${selectedBlog._id}`, data, { headers: { "Content-Type": "multipart/form-data" } });
       }
 
       setShowModal(false);
@@ -222,7 +222,7 @@ export default function BlogManagement() {
   const handleDelete = async (id) => {
     if (!confirm("Are you sure?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+      await axios.delete(`https://api.amongcart.com/api/blogs/${id}`);
       fetchBlogs();
     } catch (err) {
       console.error(err);

@@ -18,7 +18,7 @@
 //   const fetchBrands = async () => {
 //     setLoading(true);
 //     try {
-//       const res = await fetch("http://localhost:5000/api/brands");
+//       const res = await fetch("https://api.amongcart.com/api/brands");
 //       const data = await res.json();
 //       console.log("Fetched brands:", data); 
 //       setBrands(data.brands || []);
@@ -42,7 +42,7 @@
 //         formData.append("image", newBrand.image);
 //       }
 
-//       await fetch("http://localhost:5000/api/brands", {
+//       await fetch("https://api.amongcart.com/api/brands", {
 //         method: "POST",
 //         body: formData,
 //       });
@@ -65,7 +65,7 @@
 //         formData.append("image", editBrand.image);
 //       }
 
-//       await fetch(`http://localhost:5000/api/brands/${editBrand._id}`, {
+//       await fetch(`https://api.amongcart.com/api/brands/${editBrand._id}`, {
 //         method: "PUT",
 //         body: formData,
 //       });
@@ -82,7 +82,7 @@
 //   const handleDeleteBrand = async (id) => {
 //     if (!confirm("Are you sure you want to delete this brand?")) return;
 //     try {
-//       await fetch(`http://localhost:5000/api/brands/${id}`, {
+//       await fetch(`https://api.amongcart.com/api/brands/${id}`, {
 //         method: "DELETE",
 //       });
 //       fetchBrands();
@@ -297,7 +297,7 @@ export default function BrandsPage() {
   // const fetchBrands = async () => {
   //   setLoading(true);
   //   try {
-  //     const res = await fetch("http://localhost:5000/api/brands");
+  //     const res = await fetch("https://api.amongcart.com/api/brands");
   //     const data = await res.json();
   //     setBrands(data || []);
   //   } catch (err) {
@@ -310,7 +310,7 @@ export default function BrandsPage() {
   const fetchBrands = async () => {
   setLoading(true);
   try {
-    const res = await fetch("http://localhost:5000/api/brands");
+    const res = await fetch("https://api.amongcart.com/api/brands");
     const data = await res.json();
 
     // handle both possible shapes
@@ -343,7 +343,7 @@ export default function BrandsPage() {
         formData.append("image", newBrand.image);
       }
 
-      await fetch("http://localhost:5000/api/brands", {
+      await fetch("https://api.amongcart.com/api/brands", {
         method: "POST",
         body: formData,
       });
@@ -366,7 +366,7 @@ export default function BrandsPage() {
         formData.append("image", editBrand.image);
       }
 
-      await fetch(`http://localhost:5000/api/brands/${editBrand._id}`, {
+      await fetch(`https://api.amongcart.com/api/brands/${editBrand._id}`, {
         method: "PUT",
         body: formData,
       });
@@ -383,7 +383,7 @@ export default function BrandsPage() {
   const handleDeleteBrand = async (id) => {
     if (!confirm("Are you sure you want to delete this brand?")) return;
     try {
-      await fetch(`http://localhost:5000/api/brands/${id}`, {
+      await fetch(`https://api.amongcart.com/api/brands/${id}`, {
         method: "DELETE",
       });
       fetchBrands();

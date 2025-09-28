@@ -18,7 +18,7 @@ export default function BannerSliderPage() {
   const fetchSliders = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/slider");
+      const res = await fetch("https://api.amongcart.com/api/slider");
       const data = await res.json();
       console.log("Fetched sliders:", data);
       setSliders(data);
@@ -42,7 +42,7 @@ export default function BannerSliderPage() {
       formData.append("description", newSlider.description);
       if (newSlider.image) formData.append("image", newSlider.image);
 
-      await fetch("http://localhost:5000/api/slider", {
+      await fetch("https://api.amongcart.com/api/slider", {
         method: "POST",
         body: formData,
       });
@@ -66,7 +66,7 @@ export default function BannerSliderPage() {
         formData.append("image", editSlider.image);
       }
 
-      await fetch(`http://localhost:5000/api/slider/${editSlider._id}`, {
+      await fetch(`https://api.amongcart.com/api/slider/${editSlider._id}`, {
         method: "PUT",
         body: formData,
       });
@@ -83,7 +83,7 @@ export default function BannerSliderPage() {
   const handleDeleteSlider = async (id) => {
     if (!confirm("Are you sure you want to delete this banner?")) return;
     try {
-      await fetch(`http://localhost:5000/api/slider/${id}`, {
+      await fetch(`https://api.amongcart.com/api/slider/${id}`, {
         method: "DELETE",
       });
       fetchSliders();
