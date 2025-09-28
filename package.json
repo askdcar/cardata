@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "tsc && next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
+    "lint": "next lint" 
   },
-  
+ 
+
   "dependencies": {
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
