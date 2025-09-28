@@ -293,18 +293,6 @@ export default function BrandsPage() {
   // Search state
   const [search, setSearch] = useState("");
 
-  // Fetch brands
-  // const fetchBrands = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const res = await fetch("https://api.amongcart.com/api/brands");
-  //     const data = await res.json();
-  //     setBrands(data || []);
-  //   } catch (err) {
-  //     console.error("Error fetching brands:", err);
-  //   }
-  //   setLoading(false);
-  // };
 
 
   const fetchBrands = async () => {

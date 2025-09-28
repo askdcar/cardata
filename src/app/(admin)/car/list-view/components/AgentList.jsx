@@ -191,6 +191,7 @@ const parseNested = (obj) => {
         await axios.post("https://api.amongcart.com/api/cars", data, { headers: { "Content-Type": "multipart/form-data" }});
       }
 
+      
       setShowModal(false);
       fetchCars();
       setErrors({});
