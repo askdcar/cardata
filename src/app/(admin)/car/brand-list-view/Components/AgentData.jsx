@@ -544,6 +544,7 @@ export default function BrandsPage() {
                   }
                 />
               </Form.Group>
+              
               <Form.Group>
                 <Form.Label>Image</Form.Label>
                 <Form.Control
