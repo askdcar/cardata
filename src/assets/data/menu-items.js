@@ -86,18 +86,19 @@ export const MENU_ITEMS = [{
 
 {
   key: 'banner',
-  label: 'Banner',
+  label: 'Banner and Logo',
   icon: 'ri:contacts-book-3-line',
-  children: [{
+  children: [
+    {
     key: 'list-view',
     label: 'Banner List',
     url: '/banner/add',
     parentKey: 'banner'
   }, {
-    key: 'grid-view',
-    label: 'Grid View',
-    url: '/customers/grid-view',
-    parentKey: 'customers'
+    key: 'logo-list',
+    label: 'Logo List',
+    url: '/banner/logo',
+    parentKey: 'banner'
   }, {
     key: 'customer-details',
     label: 'Customer Details',
