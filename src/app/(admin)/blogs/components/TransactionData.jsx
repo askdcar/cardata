@@ -118,7 +118,7 @@ const SnowEditor = ({ value, onChange }) => {
       onChange={onChange}
       modules={modules}
       formats={formats}
-      style={{ height: "300px", marginBottom: "50px" }}
+      style={{ height: "300px", marginBottom: "80px" }}
     />
   );
 };
@@ -241,6 +241,7 @@ export default function BlogManagement() {
               <th>Title</th>
               <th>Author</th>
               <th>Category</th>
+              <th>Image</th>
               <th>Published</th>
               <th>Actions</th>
             </tr>
@@ -251,6 +252,7 @@ export default function BlogManagement() {
                 <td>{blog.title}</td>
                 <td>{blog.author}</td>
                 <td>{blog.category}</td>
+                <td className="w-25"><img src={`https://api.amongcart.com${blog.image}`} alt="blog" className="mb-3"   style={{ height: "50px" }} /></td>
                 <td>{blog.isPublished ? "Yes" : "No"}</td>
                 <td>
                   <Button size="sm" variant="info" onClick={() => openModal("view", blog)}>View</Button>{" "}
@@ -276,7 +278,7 @@ export default function BlogManagement() {
               <p><b>Category:</b> {selectedBlog.category}</p>
               <p><b>Tags:</b> {selectedBlog.tags?.join(", ")}</p>
               <p><b>Published:</b> {selectedBlog.isPublished ? new Date(selectedBlog.publishedAt).toLocaleString() : "No"}</p>
-              {selectedBlog.image && <img src={`http://localhost:5000${selectedBlog.image}`} alt="blog" className="img-fluid mb-3" />}
+              {selectedBlog.image && <img src={`https://api.amongcart.com${selectedBlog.image}`} alt="blog" className="img-fluid mb-3" />}
               <div dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />
             </div>
           ) : (
